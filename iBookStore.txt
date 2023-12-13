@@ -1,0 +1,30 @@
+iBook Store
+	1. Admin
+	2. Book Seller
+	3. Customer
+	4. Unregister User
+	
+	1. User
+		email , password , type , active_status, otp
+	2. Customer	
+		name , address , phone , email , user(FK)	
+	3. BookSeller
+		companyname , address , phone , email , name , regno , gstno , user (FK)		
+	4. Category (Admin)
+		cateName , description , status		
+	5. Books
+		bookname , authorname , sellingprice , rentalprice , images , category(FK) , 
+			publishername , seller(FK) , status , isoldbook , 
+			transtype ("Selling","Rental", "Both")			
+	6. BookOrder
+		order_date , customer(FK) , amount , payment_referenceno ,
+		 delivery_address , delivery_status ("Pending","Deliver","Cancel")	
+	7. OrderItem
+		order(fk) , book(fk) , amount , quantity		
+	8. BookRental
+		customer(fk) , book(fk) , start_date , end_date , amount , 
+		isubmitted , submit_date
+		
+		 
+		 			
+			

@@ -1,0 +1,286 @@
+<html>
+
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <title>IBook_Store Api Docs</title>
+    </head>
+    <body>
+        <h1 class="alert-info text-center">Api Documentation</h1>
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Title</th>
+                    <th>Method</th>
+                    <th>URL</th>
+                    <th>Request Format</th>
+                    <th>Request Parameter</th>
+                    <th>Response Sample</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td>Customer Registration</td>
+                    <td>POST</td>
+                    <td>{Server}/store/reg/customer</td>
+                    <td>JSON</td>
+                    <td>name,address,phone,email,password</td>
+                    <td>
+                        Response Saved :-<br>
+                        { "status": true,
+                        "msg": "Customer Saved !",
+                        "data": { },
+                        "error": null 
+                        }<br>
+                        Response Failed :-<br>
+                        { "status": false,
+                        "msg": "Customer not Saved !",
+                        "data": null,
+                        "error":[ {"feild": " ","message": " "} ] 
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Seller Registration</td>
+                    <td>POST</td>
+                    <td>{Server}/store/reg/seller</td>
+                    <td>JSON</td>
+                    <td>email,password,name,company_name,<br>address,phone,reg_no,gst_no</td>
+                    <td>
+                        Response Saved :-<br>
+                        { "status": true,
+                          "msg": "Seller Saved !",
+                          "data": { },
+                          "error": null
+                        }<br>
+                        Response Failed :-<br>
+                        { "status": false,
+                          "msg": "Seller not Saved !",
+                          "data": null,
+                          "error":[ {"feild": " ","message": " "} ] 
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>User Login</td>
+                    <td>POST</td>
+                    <td>{Server}/store/login</td>
+                    <td>JSON</td>
+                    <td>email,password</td>
+                    <td>
+                        Response Saved :-<br>
+                        {"status": true,
+                         "msg": "Login Successfull !",
+                         "data": {"name":" ","token": " "},
+                         "error": null }<br>
+                        Response Failed :-<br>
+                        {"status": false,
+                        "msg": "Invalid User !"}
+                    </td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>Category List</td>
+                    <td>GET</td>
+                    <td>{Server}/store/list/category</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        Response Saved :-<br>
+                        {   "status": true,
+                            "msg": "Categories List!",
+                            "data": [ ],
+                            "error": null
+                        }<br>
+                        Response Failed :-<br>
+                        { "status": false,
+                          "msg": "Categories List Not Found !",
+                          "data": null,
+                          "error":[ {"feild": " ","message": " "} ] 
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td>Books List</td>
+                    <td>GET</td>
+                    <td>{Server}/store/list/books</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        Response Saved :-<br>
+                        {  "status": true,
+                            "msg": "Books List!",
+                            "data": [ ],
+                            "error": null
+                        }<br>
+                        Response Failed :-<br>
+                        { "status": false,
+                          "msg": "Books List Not Found !",
+                          "data": null,
+                          "error":[ {"feild": " ","message": " "} ] 
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>6.</td>
+                    <td>Transaction List</td>
+                    <td>GET</td>
+                    <td>{Server}/store/list/trans_type</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        Response Saved :-<br>
+                        {   "status": true,
+                            "msg": "Books Transaction Type",
+                            "data": [
+                                "Selling",
+                                "Rental",
+                                "Both" ],
+                            "error": null
+                        }<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7.</td>
+                    <td>Category Save (<b>ADMIN</b>)</td>
+                    <td>POST</td>
+                    <td>{Server}/auth/cate</td>
+                    <td>JSON</td>
+                    <td>cate_name,desc</td>
+                    <td>
+                        Response Saved :-<br>
+                        {   "status": true,
+                            "msg": "Category Saved !",
+                            "data": {  },
+                            "error": null
+                        }<br>
+                        Response Failed :-<br>
+                        {   "status": false,
+                            "msg": "Category not Saved !",
+                            "data": null,
+                            "error": [
+                                {   "feild": " ", "message": " "  } ] }
+                    </td>
+                </tr>
+                <tr>
+                    <td>8.</td>
+                    <td>Category Update (<b>ADMIN</b>)</td>
+                    <td>PUT</td>
+                    <td>{Server}/auth/cate/id</td>
+                    <td>JSON</td>
+                    <td>cate_name,desc</td>
+                    <td>
+                        Response Saved :-<br>
+                        {   "status": true,
+                            "msg": "Category Updated !",
+                            "data": [ ],
+                            "error": null
+                        }<br>
+                        Response Failed :-<br>
+                        {   "status": false,
+                            "msg": "Category not updated!",
+                            "data": null,
+                            "error":[ ]
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>9.</td>
+                    <td>Category Status (<b>ADMIN</b>)</td>
+                    <td>PATCH</td>
+                    <td>{Server}/auth/cate/id</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        Response Saved :-<br>
+                        {   "status": true,
+                            "msg": "Category Status Changed !",
+                            "data": null,
+                            "error": null
+                        }<br>
+                        Response Failed :-<br>
+                        {   "status": false,
+                            "msg": "Category Status Unchanged !",
+                            "data": null,
+                            "error":[ ]
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>10.</td>
+                    <td>Book Save (<b>Seller</b>)</td>
+                    <td>POST</td>
+                    <td>{Server}/auth/book/</td>
+                    <td>JSON</td>
+                    <td>book_name,publisher_name,author_name,<br/>selling_price,rental_price,image,<br/>isoldbook,trans_type,category</td>
+                    <td>
+                        Response Saved :-<br>
+                        {   "status": true,
+                            "msg": "Book Saved !",
+                            "data": {
+                            },
+                            "error": null
+                        } <br>
+                        Response Failed :-<br>
+                        {   "status": false,
+                            "msg": "Book not Saved !",
+                            "data": null,
+                            "error": [  {   "feild": " ", "message": " " } ]
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>11.</td>
+                    <td>Book Update (<b>Seller</b>)</td>
+                    <td>PUT</td>
+                    <td>{Server}/auth/book/id</td>
+                    <td>JSON</td>
+                    <td>book_name,publisher_name,author_name,<br/>selling_price,rental_price,image,<br/>isoldbook,trans_type,category</td>
+                    <td>
+                        Response Saved :-<br>
+                        {   "status": true,
+                            "msg": "Book Updated !",
+                            "data": [ ],
+                            "error": null
+                        }<br>
+                        Response Failed :-<br>
+                        {   "status": false,
+                            "msg": "Book not Updated !",
+                            "data": null,
+                            "error": [ ]
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>12.</td>
+                    <td>Book Status (<b>Seller</b>)</td>
+                    <td>PATCH</td>
+                    <td>{Server}/auth/book/id</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        Response Saved :-<br>
+                        {   "status": true,
+                            "msg": "Book Status Changed !",
+                            "data": null,
+                            "error": null
+                        }<br>
+                        Response Failed :-<br>
+                        {   "status": false,
+                            "msg": "Book Status Unchanged !",
+                            "data": null,
+                            "error":[ ]
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
