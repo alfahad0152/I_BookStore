@@ -4,10 +4,14 @@ const fs = require('fs')
 const path = require('path')
 const webRouter = require('./routers/WebRouter')
 const authRouter = require('./routers/AuthRouter')
+const fileUpload = require('express-fileupload')
 
 dotenv.config();
 const server = express()
+server.use(express.urlencoded())
 server.use(express.json())
+server.use(fileUpload())
+
 server.get("/",(request,response)=>{
     response.setHeader('Content-Type','text/html')
     response.send(fs.readFileSync(path.join(__dirname,"apiDocs.html"),'utf-8'))
